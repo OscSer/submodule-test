@@ -1,26 +1,12 @@
 {
-    "name": "retailcompass-phoenix",
+    "name": "submodule-test",
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "start": "node -r dotenv/config scripts/create-bundle-dev.js dotenv_config_path=.env.development",
-        "start:prod": "node -r dotenv/config scripts/create-bundle-dev.js dotenv_config_path=.env.production",
         "test": "jest --coverage",
-        "build": "node -r dotenv/config scripts/create-bundle-prod.js dotenv_config_path=.env.production",
-        "build:test": "node -r dotenv/config scripts/create-bundle-prod.js dotenv_config_path=.env.development && yarn postbuild",
-        "postbuild": "mkdir -p build && for i in $( ls public ); do gzip -cf9 public/$i > build/$i; done",
         "release": "release-it",
-        "prettier:fix": "prettier --write src",
-        "eslint:report": "eslint --format json --output-file report/eslint-report.json src/",
-        "eslint:fix": "eslint --fix --ext .ts,.tsx src/",
-        "sonarqube": "sonar-scanner",
-        "prepare": "husky install",
         "check-dependencies": "ncu",
         "upgrade-dependencies": "ncu --doctor -u"
-    },
-    "lint-staged": {
-        "src/**/*": "prettier --write --ignore-unknown",
-        "src/**/*.{ts,tsx}": "eslint --fix"
     },
     "babel": {
         "presets": [
@@ -42,7 +28,6 @@
         }
     },
     "devDependencies": {
-        "@auth0/auth0-react": "^1.8.0",
         "@babel/plugin-transform-runtime": "^7.15.0",
         "@babel/preset-env": "^7.15.6",
         "@babel/preset-react": "^7.14.5",
@@ -59,28 +44,14 @@
         "@typescript-eslint/eslint-plugin": "^4.32.0",
         "@typescript-eslint/parser": "^4.32.0",
         "@welldone-software/why-did-you-render": "^6.2.1",
-        "chokidar": "^3.5.2",
         "dotenv": "^10.0.0",
-        "esbuild": "^0.13.2",
-        "esbuild-sass-plugin": "^1.5.5",
-        "eslint": "^7.32.0",
-        "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-jest-dom": "^3.9.2",
-        "eslint-plugin-react": "^7.26.0",
-        "eslint-plugin-react-hooks": "^4.2.0",
-        "eslint-plugin-testing-library": "^4.12.4",
-        "husky": "^7.0.2",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^27.2.2",
-        "lint-staged": "^11.1.2",
-        "live-server": "^1.2.1",
         "npm-check-updates": "^11.8.5",
-        "prettier": "^2.4.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "release-it": "^14.11.6",
         "sass": "^1.42.1",
-        "sonarqube-scanner": "^2.8.1",
         "typescript": "^4.4.3"
     },
     "browserslist": {
