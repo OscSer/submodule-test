@@ -1,5 +1,5 @@
 function MyButton(): JSX.Element {
-    return <button>My Button</button>
+    return <button style={{fontSize:20}}>My Button v2</button>
 }
 
 export { MyButton }
